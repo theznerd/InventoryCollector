@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <InventoryCollection>
 	<Source Name="WMI">
-		<Parameter Name="ConfigXML" Value="c:\users\nziehnert\desktop\Example.xml" />
+		<Parameter Name="ConfigXML" Value="--\Example.xml" />
 	</Source>
 	<Source Name="AddRemovePrograms" />
 	<Destination Name="LogAnalytics">
