@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<InventoryCollection>
+	<Source Name="WMI">
+		<Parameter Name="ConfigXML" Value="c:\users\nziehnert\desktop\Example.xml" />
+	</Source>
+	<Source Name="AddRemovePrograms" />
+	<Destination Name="LogAnalytics">
+		<Parameter Name="LogAnalyticsWorkspaceId" Value="a01034b1-6579-4de9-b051-720a7e90cafd" />
+		<Parameter Name="LogAnalyticsWorkspacePrimaryKey" Value="Q8oQxMBz2wQeLqzXsTqibZ+prPQfva0PoVWSGRF69h1PxpUtduH6p6rRri5v/Eoiev2DEZMHSuBByIDVZbOVNw==" />
+	</Destination>
+</InventoryCollection>
