@@ -5,7 +5,7 @@
 	</Source>
 	<Source Name="AddRemovePrograms" />
 	<Destination Name="LogAnalytics">
-		<Parameter Name="LogAnalyticsWorkspaceId" Value="a01034b1-6579-4de9-b051-720a7e90cafd" />
-		<Parameter Name="LogAnalyticsWorkspacePrimaryKey" Value="Q8oQxMBz2wQeLqzXsTqibZ+prPQfva0PoVWSGRF69h1PxpUtduH6p6rRri5v/Eoiev2DEZMHSuBByIDVZbOVNw==" />
+		<Parameter Name="LogAnalyticsWorkspaceId" Value="--" />
+		<Parameter Name="LogAnalyticsWorkspacePrimaryKey" Value="--" />
 	</Destination>
 </InventoryCollection>
