@@ -7,6 +7,16 @@ param(
     [string]$ConfigXML
 )
 
+# Check for last runtime
+$minutesBetweenRuntime = (Get-ItemProperty HKLM:\SOFTWARE\ZNerdInventoryCollector).MinutesBetweenRun
+$lastRuntime = [datetime]::new(0)
+$lastRuntime = [datetime]::Parse((Get-ItemProperty HKLM:\SOFTWARE\ZNerdInventoryCollector).LastExecution)
+$currentTime = [datetime]::Now
+if(($currentTime - $lastRuntime).TotalMinutes -le $minutesBetweenRuntime)
+{
+    Exit
+}
+
 # Load the Configuration XML
 if($icXML -like "http*"){ [xml]$xml = (Invoke-WebRequest $ConfigXML).Content }
 else{ [xml]$icXML = Get-Content $ConfigXML }

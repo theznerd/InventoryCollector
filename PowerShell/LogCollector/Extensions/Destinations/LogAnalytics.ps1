@@ -9,7 +9,9 @@ param(
     [Parameter(mandatory=$true)]
     [string]$LogAnalyticsWorkspaceId,
     [Parameter(Mandatory=$true)]
-    [string]$LogAnalyticsWorkspacePrimaryKey
+    [string]$LogAnalyticsWorkspacePrimaryKey,
+    [Parameter(Mandatory=$false)]
+    [string]$EncryptWorkspacePrimaryKey
 )
 # Load Newtonsoft JSON
 $null = [Reflection.Assembly]::LoadFile("$PSScriptRoot\..\Libraries\Newtonsoft.Json.dll")
@@ -20,6 +22,12 @@ $incomingData = ConvertFrom-JObject $jObject
 ###############################
 ## CUSTOM HANDLING CODE HERE ##
 ###############################
+if($EncryptWorkspacePrimaryKey -eq "true")
+{
+    $SecureString = ConvertTo-SecureString -String $LogAnalyticsWorkspacePrimaryKey
+    $LogAnalyticsWorkspacePrimaryKey = [System.Runtime.InteropServices.marshal]::PtrToStringAuto([System.Runtime.InteropServices.marshal]::SecureStringToBSTR($SecureString))
+}
+
 . "$PSScriptRoot\LogAnalytics-Functions.ps1"
 
 foreach($table in $incomingData.Data)
