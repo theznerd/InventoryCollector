@@ -43,7 +43,7 @@ foreach($table in $incomingData.Data)
         }
         $tempHashTable.Add("ReportedComputerName","$($incomingData.ComputerName)")
         $tempHashTable.Add("ReportedDomain","$($incomingData.ComputerDomain)")
-        $tempHashTable.Add("ComputerAADDomainName","$($incomingData.ComputerAADTenantId)")
+        $tempHashTable.Add("ComputerAADDomainName","$($incomingData.ComputerAADDomain)")
         $tempHashTable.Add("ComputerAADTenantId","$($incomingData.ComputerAADTenantId)")
         $tempHashTable.Add("DateCollected","$($incomingData.DateCollected)")
         $row.RowData = $tempHashTable
