@@ -1,5 +1,5 @@
 ###########################################
-## Log Analytics Extension
+## Destination - Log Analytics
 ## Extension for Inventory Collector
 ## Written By: Nathan Ziehnert (@theznerd)
 ###########################################
@@ -43,6 +43,8 @@ foreach($table in $incomingData.Data)
         }
         $tempHashTable.Add("ReportedComputerName","$($incomingData.ComputerName)")
         $tempHashTable.Add("ReportedDomain","$($incomingData.ComputerDomain)")
+        $tempHashTable.Add("ComputerAADDomainName","$($incomingData.ComputerAADTenantId)")
+        $tempHashTable.Add("ComputerAADTenantId","$($incomingData.ComputerAADTenantId)")
         $tempHashTable.Add("DateCollected","$($incomingData.DateCollected)")
         $row.RowData = $tempHashTable
     }
