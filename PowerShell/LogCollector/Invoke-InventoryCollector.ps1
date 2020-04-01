@@ -73,3 +73,6 @@ foreach($cData in $CollectedData)
         . "$PSScriptRoot\Extensions\Destinations\$($destination.Name).ps1" @parameters # send data to destination
     }
 }
+
+#Update Last Run Time
+Set-ItemProperty HKLM:\SOFTWARE\ZNerdInventoryCollector -Name LastExecution -Value $([datetime]::Now)
