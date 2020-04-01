@@ -20,7 +20,7 @@ class SourceOutput {
     [string]$ComputerAADDomain
     [string]$ComputerAADTenantId
     [string]$DateCollected = (Get-Date -Format "yyyyMMddHHmmss")
-    [string]$Source = "REG"
+    [string]$Source = "WMI"
     [Table[]]$Data
 }
 
@@ -47,7 +47,7 @@ if(($dsregCmd | Where {$_.P2 -eq "AzureADJoined"}).P4 -eq "YES")
 ## CUSTOM HANDLING CODE HERE ##
 ###############################
 # Load the Configuration XML
-if($xml -like "http*"){ [xml]$xml = (Invoke-WebRequest $ConfigXML -UseBasicParsing).Content }
+if($ConfigXML -like "http*"){ [xml]$xml = (Invoke-WebRequest $ConfigXML -UseBasicParsing).Content }
 else{ [xml]$xml = Get-Content $ConfigXML }
 
 # Process Data

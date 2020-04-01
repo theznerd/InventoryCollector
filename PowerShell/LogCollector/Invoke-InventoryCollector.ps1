@@ -42,7 +42,7 @@ if(($currentTime - $lastRuntime).TotalMinutes -le $minutesBetweenRuntime)
 
 
 ### Load the Configuration XML
-if($icXML -like "http*"){ [xml]$xml = (Invoke-WebRequest $ConfigXML -UseBasicParsing).Content }
+if($ConfigXML -like "http*"){ [xml]$xml = (Invoke-WebRequest $ConfigXML -UseBasicParsing).Content }
 else{ [xml]$icXML = Get-Content $ConfigXML }
 
 
